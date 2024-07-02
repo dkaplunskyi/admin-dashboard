@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container">
-    <div class="header"></div>
+    <div class="header">
+      <div class="search-bar">
+        <label for="search">
+          <img class="search-icon" src="img/magnify.svg" alt="magnify icon"></label>
+        <input type="text" name="search" id="search">
+      </div>
+      <div class="user-info">
+        <img class="ring-icon" src="img/bell-ring-outline.svg" alt="notification icon">
+        <div class="user-icon-wrapper">
+          <img class="user-icon" src="img/user-aquarium.png" alt="user icon">
+        </div>
+        <div class="user-name">Morgan Oakley</div>
+      </div>
+    </div>
     <div class="aside">
       <ul>
         <li><a href=""><img src="img/dashboard.svg" alt="dashboard icon">Dashboard</a></li>
@@ -26,4 +41,5 @@
     <div class="article"></div>
   </div>
 </body>
+
 </html>
