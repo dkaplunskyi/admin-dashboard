@@ -28,6 +28,7 @@
   grid-area: aside;
   display: grid;
   justify-content: center;
+  z-index: 1;
 }
 
 /* Aside section Style */
