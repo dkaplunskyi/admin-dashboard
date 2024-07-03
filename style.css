@@ -137,6 +137,12 @@
   border-radius: 20px;
 }
 
+.search-bar #search::placeholder{
+  font-weight: 100;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 .user {
   display: flex;
   align-items: center;
