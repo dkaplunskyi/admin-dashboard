@@ -278,9 +278,6 @@
 }
 
 /* Trending section Style */
-.trending h3{
-  font-size: calc(0.5rem + 1vh);
-}
 
 .trending-wrapper {
   background-color: white;
