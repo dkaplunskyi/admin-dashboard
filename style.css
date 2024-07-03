@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-/* Grid layout */
+/* Main Grid layout */
 
 .container {
   font-family: Roboto, sans-serif;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(260px, calc(260px + 10vh)) auto;
-  grid-template-rows: minmax(200px, 1fr) 4fr;
+  grid-template-columns: minmax(220px, calc(170px + 15vh)) 1fr;
+  grid-template-rows: minmax(220px, 1fr) 4fr;
 
   grid-template-areas:
     'aside header'
@@ -30,7 +30,7 @@
   justify-content: center;
 }
 
-/* Aside Style */
+/* Aside section Style */
 
 .aside ul {
   list-style: none;
@@ -40,7 +40,7 @@
   margin: 2vh 0;
 }
 
-.aside ul li:hover a {
+.aside ul li:nth-child(n+2):hover a {
   transform: translate(15px);
 }
 
@@ -73,7 +73,7 @@
   grid-area: article;
 }
 
-/* Header Style */
+/* Header section Style */
 
 .header {
   padding: 1.5vw;
@@ -82,7 +82,6 @@
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(470px, 1fr) minmax(330px, 1fr);
-  /* align-content: space-between; */
 }
 
 .search-bar {
@@ -113,7 +112,7 @@
 .search-bar .search-icon,
 .user-info .ring-icon {
   width: calc(1rem + 1vh);
-  transition: transform 0.2s ease-in-out ;
+  transition: transform 0.2s ease-in-out;
 }
 
 .search-bar .search-icon:hover,
@@ -124,7 +123,6 @@
 .user-info .user-icon,
 .user .user-icon {
   width: 100%;
-  height: auto;
   padding: 5px;
 }
 
@@ -176,28 +174,31 @@
   cursor: pointer;
 }
 
-/* Article style */
+/* Article section style */
 
 .article {
   padding: 1.5vw;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 3fr calc(220px + 5vw);
+  /* grid-template-rows: 1fr; */
+  /* grid-auto-rows: auto; */
   grid-template-areas:
     "projects announcements"
     "projects trending";
+  grid-gap: 40px;
 }
 
 .projects {
   grid-area: projects;
 }
 
-.projects .card-wrapper {
+.card-wrapper {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-auto-rows: minmax(200px, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: calc(15px + 1vw);
 }
 
 .announcements {
@@ -207,6 +208,8 @@
 .trending {
   grid-area: trending;
 }
+
+/* Projects Cards */
 
 .card {
   padding: 1rem;
@@ -220,6 +223,7 @@
 
 .card a {
   color: black;
+  margin-bottom: 1rem;
   font-size: calc(0.8rem + 1vh);
   font-weight: 600;
   text-decoration: none;
@@ -227,17 +231,97 @@
 
 .card p {
   color: #666666;
-  font-size: 1.1em;
+  font-size: calc(0.5rem + 1vh);
+  font-weight: 100;
 }
 
 .card .icon-wrapper {
   display: flex;
   justify-content: end;
   gap: 20px;
+  margin-top: 10px;
 }
 
 .card img {
-  width: 30px;
-  height: 30px;
+  width: calc(15px + 1vh);
   cursor: pointer;
+}
+
+/* Announcements section Style */
+
+.posts-wrapper {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.posts-wrapper .divider {
+  height: 1px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: lightgray;
+}
+
+.posts-wrapper .post {
+  padding: 20px;
+}
+
+.posts-wrapper h3 {
+  font-size: calc(0.5rem + 1vh);
+  margin-bottom: 6px;
+}
+
+.posts-wrapper p {
+  color: #666666;
+  font-size: calc(0.4rem + 1vh);
+}
+
+/* Trending section Style */
+
+.trending-wrapper {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 1rem;
+}
+
+.trending-user {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.trending-user .user-icon-wrapper {
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.trending-user:nth-child(1) .user-icon-wrapper {
+  background-color: #aca8ed;
+}
+
+.trending-user:nth-child(2) .user-icon-wrapper {
+  background-color: #8ce8e4;
+}
+
+.trending-user:nth-child(3) .user-icon-wrapper {
+  background-color: #f7e94e;
+}
+
+.trending-user:nth-child(4) .user-icon-wrapper {
+  background-color: #6ce8c7;
+}
+
+.user-icon-wrapper .user-icon {
+  width: 100%;
+  padding: 5px;
+}
+
+.trending-user .user-project-name {
+  color: #666666;
+  font-weight: 100;
 }
