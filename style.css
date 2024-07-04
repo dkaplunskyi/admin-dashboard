@@ -165,7 +165,7 @@
 }
 
 .buttons button {
-  padding: 12px 35px;
+  padding: 12px calc(12px + 1vw);
   color: white;
   font-size: 1rem;
   background-color: #008cff;
