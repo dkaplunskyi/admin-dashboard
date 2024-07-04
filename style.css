@@ -11,7 +11,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: minmax(220px, calc(170px + 15vh)) 1fr;
-  grid-template-rows: minmax(220px, 1fr) 4fr;
+  grid-template-rows: 200px 4fr;
 
   grid-template-areas:
     'aside header'
@@ -74,6 +74,10 @@
   grid-area: article;
 }
 
+.announcements-trending-block {
+  grid-area: announcements-trending-block;
+}
+
 /* Header section Style */
 
 .header {
@@ -82,7 +86,7 @@
   box-shadow: 0px 5px 10px 0px rgb(198, 198, 198);
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(470px, 1fr) minmax(330px, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
 
 .search-bar {
@@ -121,12 +125,6 @@
   transform: scale(1.3);
 }
 
-.user-info .user-icon,
-.user .user-icon {
-  width: 100%;
-  padding: 5px;
-}
-
 .search-bar #search {
   height: calc(1.6rem + 1vh);
   width: 80%;
@@ -137,7 +135,7 @@
   border-radius: 20px;
 }
 
-.search-bar #search::placeholder{
+.search-bar #search::placeholder {
   font-weight: 100;
   font-size: 0.9rem;
   font-style: italic;
@@ -150,12 +148,12 @@
 }
 
 .user .user-icon-wrapper {
-  width: 90px;
-  height: 90px;
+  min-width: 90px;
+  height: auto;
 }
 
 .user .user-name-wrapper .user-name {
-  font-size: calc(1rem + 1vh);
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
@@ -163,13 +161,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2vh;
+  gap: 12px;
 }
 
 .buttons button {
   padding: 12px 35px;
   color: white;
-  font-size: calc(0.6rem + 1vh);
+  font-size: 1rem;
   background-color: #008cff;
   border: none;
   border-radius: 50px;
@@ -184,15 +182,15 @@
 /* Article section style */
 
 .article {
-  padding: 1.5vw;
+  padding: 20px 1.5vw;
   display: grid;
-  grid-template-columns: 3fr calc(220px + 5vw);
+  grid-template-columns: 3fr calc(190px + 5vw);
   /* grid-template-rows: 1fr; */
-  /* grid-auto-rows: auto; */
+  grid-auto-rows: 1fr;
   grid-template-areas:
-    "projects announcements"
-    "projects trending";
-  grid-gap: 40px;
+    "projects announcements-trending-block"
+    "projects announcements-trending-block";
+  grid-gap: calc(10px + 1vw);
 }
 
 .projects {
@@ -208,13 +206,6 @@
   grid-gap: calc(15px + 1vw);
 }
 
-.announcements {
-  grid-area: announcements;
-}
-
-.trending {
-  grid-area: trending;
-}
 
 /* Projects Cards */
 
@@ -259,7 +250,7 @@
 .posts-wrapper {
   background-color: white;
   border-radius: 10px;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .posts-wrapper .divider {
